@@ -2,8 +2,23 @@ UnityCam
 ========
 
 # UnityCam HDRP
-Virtual webcamera for Unity HDRP.  
+Virtual webcamera for HDRP.  
+
+<center>⚠️<strong> Not support URP.  </strong> ⚠️</center>  
+
+If you want to use virtual camera in URP.  
+You need change OnRenderImage workflow to ScriptableRenderPass.  
+
+Reference here:  
+https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnRenderImage.html  
+
+Live-streaming to OBS.  
+<img src="https://user-images.githubusercontent.com/3417707/195798327-984deeb9-9c61-48c9-8652-34bb24d1f678.jpg" width="640">
   
+How to use: Drag camera into CustomPassVolume UnityCamHDRP.virtualcam.  
+<img src="https://user-images.githubusercontent.com/3417707/195798384-6749627e-8a0a-450e-a39c-582cf2df7ab4.jpg" width="640">
+
+
 # UnityCam Build-in pipline  
 ![UnityCam](http://myamens.com/Uploads/UnityCam/UnityCam.gif)
 
