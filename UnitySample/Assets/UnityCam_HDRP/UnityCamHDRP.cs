@@ -14,12 +14,13 @@ public class UnityCamHDRP : CustomPass
     extern static private IntPtr CreateTextureWrapper();
 
     [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-    extern static private void DeleteTextureWrapper(System.IntPtr w);
+    extern static private void DeleteTextureWrapper(IntPtr w);
 
     [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-    extern static private bool SendTexture(System.IntPtr w, System.IntPtr textureID);
+    extern static private bool SendTexture(IntPtr w, IntPtr textureID);
 
     [SerializeField] private Camera virtualCam;
+    [SerializeField] private Vector2Int resolution = new Vector2Int(1280, 720);
     [SerializeField] private Texture resultTexture;
     [SerializeField] private bool Flip = false;
 
@@ -40,7 +41,7 @@ public class UnityCamHDRP : CustomPass
         _BlitterProcessor = new OffscreenProcessor("UnityCam/Image/Blitter");
         _wrapper = new TextureWrapper();
 
-        buffer = new RenderTexture(1280, 720, 0);
+        buffer = new RenderTexture(resolution.x, resolution.y, 0);
         buffer.hideFlags = HideFlags.DontSave;
         virtualCam.targetTexture = buffer;
     }
