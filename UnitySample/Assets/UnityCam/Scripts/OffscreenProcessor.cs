@@ -70,7 +70,6 @@ public class OffscreenProcessor  {
 		ProcessingMaterial.mainTexture = InputTexture;
 		Graphics.Blit (InputTexture,_RenderTexture, ProcessingMaterial,pass);
 		return _RenderTexture;
-
 	}
 
 }
